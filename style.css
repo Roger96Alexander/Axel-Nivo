@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e; /* Dark background to make the game pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#game-container {
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 4px solid #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Keep canvas contained */
+    max-width: 100vw;
+    width: 1200px;
+    max-height: 100vh;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #87CEEB; /* Sky blue placeholder background */
+    touch-action: none; /* Prevent zooming */
+}
+
+#mobile-controls {
+    display: none; /* Hidden on large screens */
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none; /* Clicks pass through to canvas if needed */
+}
+
+.d-pad, .action-pad {
+    display: flex;
+    gap: 15px;
+    pointer-events: auto; /* Re-enable clicks on controls */
+}
+
+.btn-mobile {
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.btn-mobile:active {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 800px), (hover: none) and (pointer: coarse) {
+    #game-container {
+        border: none;
+        border-radius: 0;
+    }
+    #mobile-controls {
+        display: flex;
+    }
+}
+
+#restartButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-family: 'VT323', monospace;
+    font-size: 28px;
+    color: white;
+    background-color: #e74c3c;
+    border: 4px solid #c0392b;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #c0392b;
+    transition: all 0.1s;
+    z-index: 100;
+}
+
+#restartButton:hover {
+    background-color: #ff6b5a;
+    transform: translate(-50%, -52%);
+    box-shadow: 0 8px 0 #c0392b;
+}
+
+#restartButton:active {
+    transform: translate(-50%, -48%);
+    box-shadow: 0 2px 0 #c0392b;
+}

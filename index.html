@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel's Room - Platformer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 800x600 resolution for a nice retro feel -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <button id="restartButton" style="display: none;">Încearcă din nou</button>
+        
+        <div id="mobile-controls">
+            <div class="d-pad">
+                <div class="btn-mobile" id="btn-left">←</div>
+                <div class="btn-mobile" id="btn-right">→</div>
+            </div>
+            <div class="action-pad" style="flex-direction: column; gap: 10px;">
+                <div class="btn-mobile" id="btn-jump">↑</div>
+                <div class="btn-mobile" id="btn-down" style="display: none;">↓</div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
